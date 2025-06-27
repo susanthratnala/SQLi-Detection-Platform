@@ -25,7 +25,8 @@ This project is a simple yet effective web platform for detecting SQL Injection 
 1. Clone the repository:
 
 git clone https://github.com/susanthratnala/SQLi-Detection-Platform
-cd SQLi-Detection-Platform
+
+   cd SQLi-Detection-Platform
 
 2. Create a virtual environment:
 python3 -m venv venv
