@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SQL Injection Logs</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #eee;
+      padding: 20px;
+    }
+    h2 {
+      color: #90ee90;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1e1e1e;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #333;
+    }
+    th {
+      background: #2a2a2a;
+      color: #90ee90;
+    }
+    tr:hover {
+      background: #2a2a2a;
+    }
+    a {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      color: #32cd32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>SQL Injection Attempt Logs</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>IP Address</th>
+        <th>Payload</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for log in logs %}
+      <tr>
+        <td>{{ log[0] }}</td>
+        <td>{{ log[1] }}</td>
+        <td>{{ log[2] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/export/csv">⬇️ Download Logs as CSV</a>
+</body>
+</html>
